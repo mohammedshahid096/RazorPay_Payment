@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>successfull payment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <center>
+      <h1 class="text-blue-500 text-4xl font-bold mt-3">Payment Success</h1>
+    </center>
+    <div class="flex justify-center w-screen items-center">
+      <a
+        href="#"
+        class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+      >
+        <img
+          class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
+          src="https://www.shutterstock.com/image-vector/payment-aproved-online-card-concept-260nw-1341887276.jpg"
+          alt=""
+        />
+        <div class="flex flex-col justify-between p-4 leading-normal">
+          <h5
+            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+          >
+            We have received the payment
+          </h5>
+          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+            Here are the biggest enterprise technology acquisitions of 2021 so
+            far, in reverse chronological order.
+          </p>
+          <h4><b>Payment ID :</b> <span id="paymentid"></span></h4>
+        </div>
+      </a>
+    </div>
+    <script>
+      let urlString = window.location.href;
+
+      // Create a URL object
+      let url = new URL(urlString);
+
+      // Get the search parameters from the URL
+      let queryParams = new URLSearchParams(url.search);
+
+      // Access individual parameters
+      let param1Value = queryParams.get("reference");
+      document.getElementById("paymentid").innerText = param1Value;
+    </script>
+  </body>
+</html>
